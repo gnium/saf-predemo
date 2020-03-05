@@ -11,7 +11,7 @@ class Input
     @input_file.each do |item|
       item = item.strip.split(/\s/)
       line_item = { name: name(item),
-        qty: qty(item),
+        amount: amount(item),
         price: price(item),
         category: classify_category(item),
         import: classify_import(item),
@@ -22,7 +22,7 @@ class Input
     return @items
   end
   
-  def qty(item)
+  def amount(item)
     return item[0].to_i
   end
 
@@ -51,7 +51,7 @@ class Input
   end
 
   def calculate_total(item)
-    total = qty(item) * price(item)
+    total = amount(item) * price(item)
     return total
   end
 end

@@ -1,6 +1,6 @@
-require_relative '../helpers/input'
-require_relative '../helpers/calculator'
-require_relative '../helpers/print'
+require_relative '../lib/input'
+require_relative '../lib/calculator'
+require_relative '../lib/print'
 
 describe "trial" do
   it "should correctly display output 1" do

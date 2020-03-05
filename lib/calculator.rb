@@ -19,12 +19,12 @@ class Calculator
   end
 
   def round_tax(tax_amt)
-    new_tax = ((tax_amt * @nearest_cent).ceil / @nearest_cent)
-    return new_tax
+    rounded = ((tax_amt * @nearest_cent).ceil / @nearest_cent)
+    return rounded
   end
 
-  def compute_tax(price, qty, tax)
-    tax_amt = (price * qty) * tax
+  def compute_tax(price, amount, tax)
+    tax_amt = (price * amount) * tax
     adjusted_tax = round_tax(tax_amt)
     return adjusted_tax
   end
@@ -41,7 +41,7 @@ class Calculator
 
   def total_categories_tax(categories)
     categories.each do |category|
-      tax_amt = compute_tax(category[:price], category[:qty], @categories_tax)
+      tax_amt = compute_tax(category[:price], category[:amount], @categories_tax)
       category[:total] = update_total(category[:total], tax_amt)
       @sum_categories_tax += tax_amt
     end
@@ -59,7 +59,7 @@ class Calculator
 
   def total_import_tax(categories)
     categories.each do |category|
-      tax_amt = compute_tax(category[:price], category[:qty], @imports_tax)
+      tax_amt = compute_tax(category[:price], category[:amount], @imports_tax)
       category[:total] = update_total(category[:total], tax_amt)
       @sum_imports_tax += tax_amt
     end
@@ -86,7 +86,7 @@ class Calculator
   end
 
   def capture_base_prices
-    base_prices = @items.map { |item| item[:price] * item[:qty] }.flatten
+    base_prices = @items.map { |item| item[:price] * item[:amount] }.flatten
     return base_prices
   end
 
