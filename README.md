@@ -176,9 +176,5 @@ As I was writing this, I broke the application down into 3 major components:
 - `Calculator` - where the readable format taken from input is used to calculate the total values
 - `Print` - where the input, revised input and total values are taken to be outputed
 
-I am fairly new to programming and to test driven development in general. This problem was quite challenging as a beginner because having just learned Ruby about 3 months ago, I currently have a narrow linear way of thinking through the algorithm. With test driven development, it is almost going backwards in a way (thinking of tests to write first then coding). So it is a bit of a shift in gears from just coding (going forwards) to test driven development (going backwards).
-
-However this was an excellent excercise to get better aquainted with Test Driven Development and with Object Oriented Programming in general. I think I have improved a whole lot from the last 3 months I spent at The Starter League.
-
 ### Review
 I am sure there is quite a bit of refactoring that can be done. I still have a lot to learn, but I am learning quick!
